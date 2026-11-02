@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: node-red-suelo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: TZ
+        value: America/Bogota
+      - key: NODE_RED_CREDENTIAL_SECRET
+        generateValue: true
+      - key: NODE_RED_USERNAME
+        value: admin
+      - key: NODE_RED_PASSWORD
+        generateValue: true
+      - key: MQTT_USER
+        sync: false
+      - key: MQTT_PASSWORD
+        sync: false
+      - key: PGHOST
+        sync: false
+      - key: PGPORT
+        value: "6543"
+      - key: PGDATABASE
+        value: postgres
+      - key: PGUSER
+        sync: false
+      - key: PGPASSWORD
+        sync: false
+      - key: NODE_RED_LOG_LEVEL
+        value: info

@@ -1,0 +1,13 @@
+{
+  "name": "node-red-suelo-render",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node-RED para humedad de suelo ESP32 con guardado en Supabase",
+  "scripts": {
+    "start": "node-red --userDir /data --settings /data/settings.js"
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3",
+    "node-red-contrib-postgresql": "0.16.2"
+  }
+}
